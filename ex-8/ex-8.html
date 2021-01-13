@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Exercise 8</title>
+    <style>
+        #table{
+            list-style-type: none;
+        }
+            #table li{
+                font-size: 30px;
+            }
+
+        #messages{
+            position: fixed;
+            right: 5%;
+            bottom: 5%;
+        }
+            #messages .alert{
+                animation: alertSlide .5s;
+            }
+        
+        @keyframes alertSlide{
+            from{
+                transform: translateY(15px);
+                opacity: 0;
+            }to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+      
+    <nav class="navbar navbar-ligth bg-dark">
+        <div class="container-fluid">
+            <div class="mx-auto d-flex">
+                <form action="" id="numbersForm" class="d-flex">
+
+                    <input id="numberToMultiply" name="numberToMultiply" type="text" inputmode="numeric" placeholder="Number to multiply" class="form-control inputNumber m-1">
+
+                    <input id="multiplier" name="multiplier" type="text" inputmode="numeric" placeholder="Times to multiply"  class="form-control inputNumber m-1">
+
+                    <button type="submit" class="btn btn-success m-1">+</button>
+
+                    <button id="deleteButton" type="button" class="btn btn-danger m-1">x</button>
+                </form>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-center mt-5">
+        <h1 id="tableHeading" class="h1"></h1>
+        <ul id="table" class="p-0">
+        </ul>
+    </div>
+
+    <div id="messages"></div>
+
+    <script src="ex-8.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
