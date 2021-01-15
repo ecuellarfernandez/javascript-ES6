@@ -8,20 +8,16 @@ const ul_html = document.getElementById('myUl');
 
 let names = ['Albert', 'Ismael', 'Luis', 'Ruben', 'Jonatan', 'Jake', 'Jose'];
 
+const simplifyString = string=> string.toLowerCase().trim();
+
 search_html.addEventListener('keyup', e=>{
-    const searchValue = e.target.value.toLowerCase().trim();
-
-    const filteredNames = names.filter(name=> name.toLowerCase().trim().includes(searchValue));
+    const filteredNames = names.filter(name=> simplifyString(name).includes(simplifyString(e.target.value)));
+    if(filteredNames.length < 1) return renderNames(['No results found ☹️']);
     renderNames(filteredNames);
-
-    if(filteredNames.length === 0) return renderNames(['No results found ☹️']);
 });
 
 function renderNames(arr){
-    const html = arr.map((item)=>{
-        return `<li>${item}</li>`
-    }).join('');
-
+    const html = arr.map((item)=>`<li>${item}</li>`).join('');
     ul_html.innerHTML = html;
 }
 renderNames(names);
